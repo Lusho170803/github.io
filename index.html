@@ -26,27 +26,29 @@
                             Itinerario <span class="nav-caret">▾</span>
                         </a>
                         <div class="nav-dropdown">
-                            <button class="dd-item" onclick="goToUnit('unit1')">
-                                <span class="dd-badge">I</span>
-                                <span class="dd-text">
-                                    <span class="dd-name">Administración en la Nube</span>
-                                    <span class="dd-weeks">Sem. 01 – 04 &nbsp;·&nbsp; 25%</span>
-                                </span>
-                            </button>
-                            <button class="dd-item" onclick="goToUnit('unit2')">
-                                <span class="dd-badge">II</span>
-                                <span class="dd-text">
-                                    <span class="dd-name">Aplicaciones Empresariales</span>
-                                    <span class="dd-weeks">Sem. 05 – 08 &nbsp;·&nbsp; 50%</span>
-                                </span>
-                            </button>
-                            <button class="dd-item dd-u3" onclick="goToUnit('unit3')">
-                                <span class="dd-badge dd-badge-u3">III</span>
-                                <span class="dd-text">
-                                    <span class="dd-name">Infraestructura de TI</span>
-                                    <span class="dd-weeks">Sem. 09 – 12 &nbsp;·&nbsp; 75%</span>
-                                </span>
-                            </button>
+                            <div class="nav-dropdown-inner">
+                                <button class="dd-item" onclick="goToUnit('unit1')">
+                                    <span class="dd-badge">I</span>
+                                    <span class="dd-text">
+                                        <span class="dd-name">Administración en la Nube</span>
+                                        <span class="dd-weeks">Sem. 01 – 04 &nbsp;·&nbsp; 25%</span>
+                                    </span>
+                                </button>
+                                <button class="dd-item" onclick="goToUnit('unit2')">
+                                    <span class="dd-badge">II</span>
+                                    <span class="dd-text">
+                                        <span class="dd-name">Aplicaciones Empresariales</span>
+                                        <span class="dd-weeks">Sem. 05 – 08 &nbsp;·&nbsp; 50%</span>
+                                    </span>
+                                </button>
+                                <button class="dd-item dd-u3" onclick="goToUnit('unit3')">
+                                    <span class="dd-badge dd-badge-u3">III</span>
+                                    <span class="dd-text">
+                                        <span class="dd-name">Infraestructura de TI</span>
+                                        <span class="dd-weeks">Sem. 09 – 12 &nbsp;·&nbsp; 75%</span>
+                                    </span>
+                                </button>
+                            </div>
                         </div>
                     </li>
                 </ul>
@@ -422,17 +424,36 @@
             if (!isOpen) unit.classList.add('open');
         }
 
-        // ── Desde el dropdown del nav: abre unidad + scroll suave ──
+        // ── Desde el dropdown del nav: cierra dropdown, abre unidad, scroll ──
         function goToUnit(id) {
+            // Cierra el dropdown
+            document.querySelectorAll('.has-dropdown').forEach(el => el.classList.remove('dd-open'));
+
+            // Abre el acordeón correcto
             document.querySelectorAll('.acc-unit').forEach(u => u.classList.remove('open'));
             document.getElementById(id).classList.add('open');
 
+            // Scroll suave con offset del header
             setTimeout(() => {
                 const el = document.getElementById(id);
                 const top = el.getBoundingClientRect().top + window.scrollY - 100;
                 window.scrollTo({ top, behavior: 'smooth' });
             }, 50);
         }
+
+        // ── Clic en "Itinerario" también hace toggle del dropdown ──
+        document.querySelector('.nav-dropdown-trigger').addEventListener('click', function(e) {
+            e.preventDefault();
+            const li = this.closest('.has-dropdown');
+            li.classList.toggle('dd-open');
+        });
+
+        // ── Clic fuera cierra el dropdown ──
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.has-dropdown')) {
+                document.querySelectorAll('.has-dropdown').forEach(el => el.classList.remove('dd-open'));
+            }
+        });
 
         // ── Init ──
         document.getElementById('unit1').classList.add('open');
