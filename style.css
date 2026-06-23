@@ -434,3 +434,120 @@ body {
     .b-specs { flex-wrap: wrap; }
     .spec { min-width: 70px; }
 }
+
+/* ══════════════════════════════════════════════
+   DROPDOWN DE UNIDADES — nav Itinerario
+   ══════════════════════════════════════════════ */
+
+/* Ítem padre con dropdown */
+.has-dropdown {
+    position: relative;
+}
+
+/* El caret girado en hover */
+.nav-caret {
+    font-size: 0.7rem;
+    display: inline-block;
+    transition: transform 0.25s;
+    margin-left: 3px;
+    vertical-align: middle;
+}
+.has-dropdown:hover .nav-caret {
+    transform: rotate(180deg);
+}
+
+/* Panel dropdown */
+.nav-dropdown {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    min-width: 280px;
+    background: rgba(9, 18, 40, 0.97);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    border-radius: 18px;
+    padding: 0.6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-6px);
+    transition: opacity 0.22s ease, transform 0.22s ease;
+    z-index: 2000;
+}
+
+/* Aparece en hover sobre el li padre */
+.has-dropdown:hover .nav-dropdown {
+    opacity: 1;
+    pointer-events: all;
+    transform: translateY(0);
+}
+
+/* Cada fila del dropdown */
+.dd-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    background: none;
+    border: none;
+    border-radius: 12px;
+    padding: 10px 14px;
+    cursor: pointer;
+    text-align: left;
+    transition: background 0.18s;
+    color: var(--text-high);
+}
+.dd-item:hover {
+    background: rgba(59, 130, 246, 0.1);
+}
+.dd-item.dd-u3:hover {
+    background: rgba(129, 140, 248, 0.1);
+}
+
+/* Badge con número romano */
+.dd-badge {
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    background: rgba(59, 130, 246, 0.15);
+    border: 1px solid rgba(59, 130, 246, 0.4);
+    color: var(--accent);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+.dd-badge-u3 {
+    background: rgba(129, 140, 248, 0.15);
+    border-color: rgba(129, 140, 248, 0.4);
+    color: var(--accent-alt);
+}
+
+/* Texto del ítem */
+.dd-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+.dd-name {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--text-high);
+    line-height: 1.2;
+}
+.dd-weeks {
+    font-size: 0.68rem;
+    color: var(--text-low);
+    font-family: 'JetBrains Mono', monospace;
+}
+
+/* Separador sutil entre items */
+.dd-item + .dd-item {
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+    border-radius: 12px;
+}
