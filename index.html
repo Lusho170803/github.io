@@ -10,10 +10,10 @@
 <body>
 
     <header class="header">
-        <div class="nav-container">
+        <div class="nav-container container">
             <div class="brand">
                 <img src="images/upla_logo.png" alt="Logo UPLA" class="nav-logo">
-                <div class="brand-text">LVM<span></span></div>
+                <div class="brand-text">LVM<span>.</span></div>
             </div>
             <nav>
                 <ul class="nav-menu">
@@ -28,17 +28,18 @@
     </header>
 
     <main>
+
+        <!-- ── HERO ── -->
         <section id="personal" class="section-hero">
             <div class="container hero-grid">
                 <div class="hero-content">
                     <span class="badge-accent">Estudiante de Ingeniería de Sistemas</span>
                     <h1 class="main-name">Luis Veliz <br><span class="outline-text">Miranda</span></h1>
                     <p class="hero-bio">VII Ciclo | 22 Años. Enfocado en la optimización de procesos mediante el buen gobierno de TI y arquitecturas de computación en la nube.</p>
-                    
                     <div class="personal-stats">
                         <div class="stat-card"><strong>22</strong><span>Edad</span></div>
                         <div class="stat-card"><strong>VII</strong><span>Ciclo</span></div>
-                        <div class="stat-card"><strong>UPLA</strong><span>Sede - Huancayo</span></div>
+                        <div class="stat-card"><strong>UPLA</strong><span>Huancayo</span></div>
                     </div>
                 </div>
                 <div class="hero-visual-area">
@@ -48,13 +49,13 @@
             </div>
         </section>
 
+        <!-- ── UNIVERSIDAD ── -->
         <section id="universidad" class="section-upla">
             <div class="container">
                 <div class="upla-header">
                     <img src="images/upla_logo.png" alt="UPLA Logo" class="content-logo">
                     <h2 class="title-lg">Universidad Peruana Los Andes</h2>
                 </div>
-                
                 <div class="upla-matrix">
                     <div class="matrix-card primary">
                         <h3>Misión Institucional</h3>
@@ -74,6 +75,7 @@
             </div>
         </section>
 
+        <!-- ── CARRERA ── -->
         <section id="carrera" class="section-carrera">
             <div class="container">
                 <div class="carrera-layout">
@@ -92,89 +94,286 @@
             </div>
         </section>
 
+        <!-- ── SYLLABUS ── -->
         <section id="curso" class="section-curso">
             <div class="container">
                 <div class="course-blueprint">
                     <div class="blueprint-top">
                         <div class="code-box">CÓDIGO: 332159</div>
                         <h4>Gerencia de Sistemas de Información</h4>
-                        <div class="docente-info">Dr. Magno Teófilo Baldeón Tovar</div>
+                        <div class="docente-info">Dr. Magno Teófilo Baldeón Tovar &nbsp;·&nbsp; d.mbaldeon@ms.upla.edu.pe</div>
                     </div>
-                    
                     <div class="blueprint-content">
                         <div class="b-section">
                             <h5>Competencia General</h5>
-                            <p>Usa TICs para el diseño de sistemas organizacionales promoviendo la sostenibilidad y eficiencia organizacional bajo marcos éticos.</p>
+                            <p>Aplica principios de gestión de TI para la planificación, formulación, evaluación y control de proyectos tecnológicos, considerando estándares internacionales, marco legal y gobierno corporativo de TI.</p>
                         </div>
                         <div class="b-specs">
-                            <div class="spec"><span>Créditos</span><strong> 03</strong></div>
-                            <div class="spec"><span>Semestre</span><strong> 2026-I</strong></div>
-                            <div class="spec"><span>H. Teoría</span><strong> 02</strong></div>
-                            <div class="spec"><span>H. Práctica</span><strong> 02</strong></div>
+                            <div class="spec"><span>Créditos</span><strong>03</strong></div>
+                            <div class="spec"><span>Semestre</span><strong>2026-I</strong></div>
+                            <div class="spec"><span>H. Teoría</span><strong>02</strong></div>
+                            <div class="spec"><span>H. Práctica</span><strong>02</strong></div>
+                            <div class="spec"><span>Inicio</span><strong>06 Abr</strong></div>
+                            <div class="spec"><span>Fin</span><strong>26 Jul</strong></div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- ── ITINERARIO ── -->
         <section id="itinerario" class="section-itinerario">
             <div class="container">
                 <h3 class="title-md centered">Itinerario de Aprendizaje</h3>
-                
-                <div class="timeline">
-                    <div class="timeline-unit">
-                        <div class="unit-info">
-                            <h5>UNIDAD I</h5>
-                            <h6>Administración en la Nube</h6>
-                        </div>
-                        <div class="weeks-layout">
-                            <div class="week-node">
-                                <span class="n">01</span>
-                                <p><strong>Sistemas de Información:</strong> Tipos y componentes en la empresa moderna.</p>
+                <p class="subtitle-meta centered">Semanas 01 – 12 · Plan 2022 · 2026-I</p>
+
+                <!-- ACORDEÓN DE UNIDADES -->
+                <div class="accordion" id="accordionUnidades">
+
+                    <!-- ══ UNIDAD I ══ -->
+                    <div class="acc-unit" id="unit1">
+                        <button class="acc-header" onclick="toggleUnit('unit1')">
+                            <div class="acc-left">
+                                <span class="acc-num">UNIDAD I</span>
+                                <span class="acc-title">Administración en la Nube</span>
                             </div>
-                            <div class="week-node">
-                                <span class="n">02</span>
-                                <p><strong>Cloud Computing:</strong> Modelos de despliegue y estrategias de adopción.</p>
+                            <div class="acc-meta">
+                                <span class="acc-weeks">Sem. 01 – 04</span>
+                                <span class="acc-progress" style="--pct: 25%">25%</span>
+                                <span class="acc-arrow">▾</span>
                             </div>
-                            <div class="week-node">
-                                <span class="n">03</span>
-                                <p><strong>Administración Cloud:</strong> Funciones, tecnología y escalabilidad.</p>
+                        </button>
+                        <div class="acc-body">
+                            <div class="acc-capacity">
+                                <strong>Capacidad:</strong> Conoce la administración y la empresa en la nube, infraestructura de TI y tecnologías emergentes, para gestionar adecuadamente.
                             </div>
-                            <div class="week-node">
-                                <span class="n">04</span>
-                                <p><strong>Infraestructura TI:</strong> Modelos de hardware y software emergente.</p>
+                            <div class="weeks-grid">
+                                <div class="week-card">
+                                    <div class="wc-head">
+                                        <span class="wc-num">01</span>
+                                        <div class="wc-av">6%</div>
+                                    </div>
+                                    <h6>Sistemas de Información en la Empresa</h6>
+                                    <ul>
+                                        <li>La información en la empresa</li>
+                                        <li>Tipos de sistemas de información</li>
+                                        <li>Componentes de los sistemas de información</li>
+                                    </ul>
+                                </div>
+                                <div class="week-card">
+                                    <div class="wc-head">
+                                        <span class="wc-num">02</span>
+                                        <div class="wc-av">12.5%</div>
+                                    </div>
+                                    <h6>Computación en la Nube</h6>
+                                    <ul>
+                                        <li>Computación en la nube</li>
+                                        <li>Modelos de despliegue</li>
+                                    </ul>
+                                </div>
+                                <div class="week-card">
+                                    <div class="wc-head">
+                                        <span class="wc-num">03</span>
+                                        <div class="wc-av">18.75%</div>
+                                    </div>
+                                    <h6>Administración en la Nube</h6>
+                                    <ul>
+                                        <li>Funciones de la administración cloud</li>
+                                        <li>Tecnología en la nube</li>
+                                    </ul>
+                                </div>
+                                <div class="week-card">
+                                    <div class="wc-head">
+                                        <span class="wc-num">04</span>
+                                        <div class="wc-av">25%</div>
+                                    </div>
+                                    <h6>Infraestructura de TI</h6>
+                                    <ul>
+                                        <li>Componentes de infraestructura TI</li>
+                                        <li>Tipos de infraestructura de TI</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="acc-footer">
+                                <span class="footer-tag">📚 Bibliografía principal: Laudon & Laudon (2024) · Lapiedra (2011) · Oz (2008)</span>
+                                <span class="footer-tag">📝 Estrategia: Aprendizaje basado en problemas</span>
                             </div>
                         </div>
                     </div>
 
-                    <div class="timeline-unit">
-                        <div class="unit-info">
-                            <h5>UNIDAD II</h5>
-                            <h6>Excelencia Operacional</h6>
-                        </div>
-                        <div class="weeks-layout">
-                            <div class="week-node active">
-                                <span class="n">05</span>
-                                <p><strong>Fundamentos de BI:</strong> Gestión avanzada de Bases de Datos e Información.</p>
+                    <!-- ══ UNIDAD II ══ -->
+                    <div class="acc-unit" id="unit2">
+                        <button class="acc-header" onclick="toggleUnit('unit2')">
+                            <div class="acc-left">
+                                <span class="acc-num">UNIDAD II</span>
+                                <span class="acc-title">Aplicaciones Empresariales de SI</span>
+                            </div>
+                            <div class="acc-meta">
+                                <span class="acc-weeks">Sem. 05 – 08</span>
+                                <span class="acc-progress" style="--pct: 50%">50%</span>
+                                <span class="acc-arrow">▾</span>
+                            </div>
+                        </button>
+                        <div class="acc-body">
+                            <div class="acc-capacity">
+                                <strong>Capacidad:</strong> Genera la obtención de la excelencia operacional e intimidad con el cliente a través de aplicaciones empresariales, para mejorar la relación y satisfacción con el cliente.
+                            </div>
+                            <div class="weeks-grid">
+                                <div class="week-card active">
+                                    <div class="wc-head">
+                                        <span class="wc-num active">05</span>
+                                        <div class="wc-av">31.25%</div>
+                                    </div>
+                                    <h6>Fundamentos de Inteligencia de Negocios</h6>
+                                    <ul>
+                                        <li>Los SI en los negocios</li>
+                                        <li>Fundamentos de BI</li>
+                                        <li>Bases de datos y administración de la información</li>
+                                    </ul>
+                                    <span class="badge-current">Semana actual</span>
+                                </div>
+                                <div class="week-card">
+                                    <div class="wc-head">
+                                        <span class="wc-num">06</span>
+                                        <div class="wc-av">37.5%</div>
+                                    </div>
+                                    <h6>Estructura Informática Integral</h6>
+                                    <ul>
+                                        <li>Diseño de la estructura informática integral de los SIG</li>
+                                        <li>Tres planos: EPS (Estratégico, Productivo, Soporte)</li>
+                                    </ul>
+                                </div>
+                                <div class="week-card">
+                                    <div class="wc-head">
+                                        <span class="wc-num">07</span>
+                                        <div class="wc-av">43.75%</div>
+                                    </div>
+                                    <h6>Aplicaciones Empresariales y EAS</h6>
+                                    <ul>
+                                        <li>Enterprise Application Software (EAS)</li>
+                                        <li>Usos comunes de las aplicaciones empresariales</li>
+                                        <li>Tipos: CRM, SCM, ERP, SIG</li>
+                                    </ul>
+                                </div>
+                                <div class="week-card">
+                                    <div class="wc-head">
+                                        <span class="wc-num">08</span>
+                                        <div class="wc-av">50%</div>
+                                    </div>
+                                    <h6>Gestión de Aplicaciones en la Nube Híbrida</h6>
+                                    <ul>
+                                        <li>Gestión de aplicaciones para la nube híbrida</li>
+                                        <li>Software de nube híbrida para un negocio más inteligente</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="acc-footer">
+                                <span class="footer-tag">📚 Bibliografía principal: Laudon & Laudon (2024) · Arciniegas (2023) · Bernardi & Calvo (2020)</span>
+                                <span class="footer-tag">📝 Estrategia: Aprendizaje basado en problemas</span>
                             </div>
                         </div>
                     </div>
+
+                    <!-- ══ UNIDAD III ══ -->
+                    <div class="acc-unit" id="unit3">
+                        <button class="acc-header" onclick="toggleUnit('unit3')">
+                            <div class="acc-left">
+                                <span class="acc-num u3">UNIDAD III</span>
+                                <span class="acc-title">Infraestructura de Tecnologías de Información</span>
+                            </div>
+                            <div class="acc-meta">
+                                <span class="acc-weeks">Sem. 09 – 12</span>
+                                <span class="acc-progress u3-p" style="--pct: 75%">75%</span>
+                                <span class="acc-arrow">▾</span>
+                            </div>
+                        </button>
+                        <div class="acc-body">
+                            <div class="acc-capacity">
+                                <strong>Capacidad:</strong> Identifica la infraestructura de la Tecnología de la Información para ser aplicada en la organización.
+                            </div>
+                            <div class="weeks-grid">
+                                <div class="week-card">
+                                    <div class="wc-head">
+                                        <span class="wc-num u3">09</span>
+                                        <div class="wc-av">56.25%</div>
+                                    </div>
+                                    <h6>Gobierno de TI</h6>
+                                    <ul>
+                                        <li>Alineamiento estratégico de TI con los objetivos de la empresa</li>
+                                        <li>Creación de valor</li>
+                                        <li>Gestión de procesos</li>
+                                    </ul>
+                                </div>
+                                <div class="week-card">
+                                    <div class="wc-head">
+                                        <span class="wc-num u3">10</span>
+                                        <div class="wc-av">62.5%</div>
+                                    </div>
+                                    <h6>Gestión de Servicios</h6>
+                                    <ul>
+                                        <li>Gestión de servicios TI</li>
+                                        <li>Estrategia del servicio</li>
+                                    </ul>
+                                </div>
+                                <div class="week-card">
+                                    <div class="wc-head">
+                                        <span class="wc-num u3">11</span>
+                                        <div class="wc-av">68.75%</div>
+                                    </div>
+                                    <h6>Diseño y Transición del Servicio</h6>
+                                    <ul>
+                                        <li>Diseño del servicio</li>
+                                        <li>Transición del servicio</li>
+                                    </ul>
+                                </div>
+                                <div class="week-card">
+                                    <div class="wc-head">
+                                        <span class="wc-num u3">12</span>
+                                        <div class="wc-av">75%</div>
+                                    </div>
+                                    <h6>Gestión del Cambio y Conocimiento</h6>
+                                    <ul>
+                                        <li>Gestión del cambio</li>
+                                        <li>Gestión del conocimiento</li>
+                                        <li>Gestión de eventos, incidencias y problemas</li>
+                                        <li>Centro de servicio</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="acc-footer">
+                                <span class="footer-tag">📚 Bibliografía principal: Laudon & Laudon (2024) · Arciniegas (2023) · Oz (2008)</span>
+                                <span class="footer-tag">📝 Estrategia: Aprendizaje basado en problemas</span>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
+                <!-- FIN ACORDEÓN -->
 
+                <!-- INFO EXTRA -->
                 <div class="extra-info-grid">
                     <div class="extra-card">
                         <h5>Estrategias Didácticas</h5>
                         <ul>
-                            <li>Aprendizaje Colaborativo</li>
+                            <li>Aprendizaje Basado en Problemas</li>
                             <li>Estudio de Casos Reales</li>
                             <li>Discusiones Guiadas</li>
                         </ul>
                     </div>
                     <div class="extra-card">
+                        <h5>Sistema de Evaluación</h5>
+                        <ul>
+                            <li>Evidencia de Conocimiento · EC</li>
+                            <li>Evidencia de Desempeño · ED</li>
+                            <li>Evidencia de Producto · EP</li>
+                        </ul>
+                    </div>
+                    <div class="extra-card">
                         <h5>Bibliografía Clave</h5>
-                        <p>Lapiedra (2016), Joyanes Aguilar (Cloud Computing), Tomas Erl (Cloud Architecture).</p>
+                        <p>Laudon & Laudon (2024) · Arciniegas (2023) · Oz (2008) · Lapiedra (2011) · Bernardi & Calvo (2020)</p>
                     </div>
                 </div>
+
             </div>
         </section>
     </main>
@@ -183,8 +382,22 @@
         <div class="container">
             <img src="images/upla_logo.png" alt="Logo UPLA" class="footer-logo">
             <p><strong>Luis Veliz Miranda</strong> | Facultad de Ingeniería UPLA 2026</p>
+            <p class="footer-sub">Gerencia de Sistemas de Información · Código 332159 · Dr. Magno Teófilo Baldeón Tovar</p>
         </div>
     </footer>
+
+    <script>
+        function toggleUnit(id) {
+            const unit = document.getElementById(id);
+            const isOpen = unit.classList.contains('open');
+            // Cierra todos
+            document.querySelectorAll('.acc-unit').forEach(u => u.classList.remove('open'));
+            // Abre el clickeado si estaba cerrado
+            if (!isOpen) unit.classList.add('open');
+        }
+        // Abre la primera unidad por defecto
+        document.getElementById('unit1').classList.add('open');
+    </script>
 
 </body>
 </html>
