@@ -1,12 +1,17 @@
-/* SISTEMA DE DISEÑO PRO */
+/* ══════════════════════════════════════════════
+   SISTEMA DE DISEÑO — Luis Veliz Miranda / UPLA
+   ══════════════════════════════════════════════ */
 :root {
-    --upla-blue: #0a2e5c;
-    --accent: #3b82f6;
-    --bg-main: #020617;
+    --upla-blue:  #0a2e5c;
+    --accent:     #3b82f6;
+    --accent-alt: #818cf8;
+    --bg-main:    #020617;
     --bg-surface: #0f172a;
-    --text-high: #f8fafc;
-    --text-low: #94a3b8;
-    --nav-h: 85px;
+    --bg-deep:    #050b1a;
+    --text-high:  #f8fafc;
+    --text-low:   #94a3b8;
+    --border:     rgba(255,255,255,0.05);
+    --nav-h:      85px;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -22,87 +27,410 @@ body {
 
 .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
 
-/* HEADER GLASSMORPISM */
+/* ── HEADER ── */
 .header {
     height: var(--nav-h);
     background: rgba(2, 6, 23, 0.85);
     backdrop-filter: blur(12px);
     position: fixed; width: 100%; top: 0; z-index: 1000;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
+    border-bottom: 1px solid var(--border);
 }
-.nav-container { display: flex; justify-content: space-between; align-items: center; height: 100%; }
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
 .brand { display: flex; align-items: center; gap: 1rem; }
 .nav-logo { height: 40px; filter: drop-shadow(0 0 5px var(--accent)); }
 .brand-text { font-family: 'JetBrains Mono', monospace; font-weight: 800; font-size: 1.3rem; }
 .brand-text span { color: var(--accent); }
 .nav-menu { display: flex; list-style: none; gap: 2rem; }
-.nav-menu a { text-decoration: none; color: var(--text-low); font-size: 0.85rem; font-weight: 600; text-transform: uppercase; transition: 0.3s; }
+.nav-menu a {
+    text-decoration: none;
+    color: var(--text-low);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: color 0.3s;
+}
 .nav-menu a:hover { color: var(--accent); }
 
-/* SECCIÓN HERO */
+/* ── HERO ── */
 .section-hero { padding: 180px 0 100px; position: relative; }
 .hero-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 3rem; align-items: center; }
-.badge-accent { background: rgba(59, 130, 246, 0.1); border: 1px solid var(--accent); color: var(--accent); padding: 5px 15px; border-radius: 50px; font-size: 0.75rem; font-weight: 800; margin-bottom: 1.5rem; display: inline-block; }
+.badge-accent {
+    background: rgba(59,130,246,0.1);
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    padding: 5px 15px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    display: inline-block;
+}
 .main-name { font-size: clamp(3rem, 8vw, 5.5rem); line-height: 0.9; font-weight: 800; margin-bottom: 1.5rem; }
 .outline-text { color: transparent; -webkit-text-stroke: 1px var(--accent); }
 .hero-bio { font-size: 1.2rem; color: var(--text-low); max-width: 500px; margin-bottom: 3rem; }
-
 .personal-stats { display: flex; gap: 1.5rem; }
-.stat-card { background: var(--bg-surface); padding: 1.5rem; border-radius: 20px; border: 1px solid rgba(255,255,255,0.05); flex: 1; text-align: center; }
+.stat-card {
+    background: var(--bg-surface);
+    padding: 1.5rem;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    flex: 1;
+    text-align: center;
+}
 .stat-card strong { display: block; font-size: 1.5rem; color: var(--accent); }
 .stat-card span { font-size: 0.7rem; text-transform: uppercase; color: var(--text-low); }
 
-/* IMAGEN AMBIENTAL */
 .hero-visual-area { position: relative; display: flex; justify-content: center; align-items: center; }
 .sistemas-img {
     width: 100%; max-width: 450px;
-    object-fit: contain;
-    z-index: 2;
+    object-fit: contain; z-index: 2;
     opacity: 0.5;
     mask-image: radial-gradient(circle, black 30%, transparent 80%);
     -webkit-mask-image: radial-gradient(circle, black 30%, transparent 80%);
     filter: drop-shadow(0 0 20px var(--accent));
 }
-.ambient-glow { position: absolute; width: 300px; height: 300px; background: var(--accent); filter: blur(150px); opacity: 0.15; z-index: 1; }
+.ambient-glow {
+    position: absolute; width: 300px; height: 300px;
+    background: var(--accent); filter: blur(150px); opacity: 0.15; z-index: 1;
+}
 
-/* UPLA SECTION */
-.section-upla { padding: 120px 0; background: #050b1a; border-top: 1px solid rgba(255,255,255,0.03); }
+/* ── UPLA ── */
+.section-upla { padding: 120px 0; background: var(--bg-deep); border-top: 1px solid var(--border); }
 .upla-header { text-align: center; margin-bottom: 5rem; }
 .content-logo { height: 100px; margin-bottom: 1.5rem; }
 .title-lg { font-size: 3rem; font-weight: 800; }
 .upla-matrix { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 1.5rem; }
-.matrix-card { background: var(--bg-surface); padding: 3rem; border-radius: 30px; border: 1px solid rgba(255,255,255,0.05); }
+.matrix-card {
+    background: var(--bg-surface);
+    padding: 3rem;
+    border-radius: 30px;
+    border: 1px solid var(--border);
+}
 .matrix-card.primary { background: var(--upla-blue); }
 .matrix-card.accent { border-color: var(--accent); }
 .matrix-card h3 { margin-bottom: 1.5rem; color: var(--accent); }
 .matrix-card.primary h3 { color: white; }
 .v-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-.v-chips span { background: rgba(59, 130, 246, 0.1); padding: 5px 12px; border-radius: 5px; font-size: 0.8rem; font-weight: bold; }
+.v-chips span {
+    background: rgba(59,130,246,0.1);
+    padding: 5px 12px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
 
-/* ITINERARIO ACADÉMICO */
-.section-itinerario { padding: 120px 0; }
-.timeline { display: flex; flex-direction: column; gap: 3rem; margin-top: 4rem; }
-.timeline-unit { display: grid; grid-template-columns: 250px 1fr; gap: 2rem; background: var(--bg-surface); border-radius: 30px; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); }
-.unit-info { background: rgba(255,255,255,0.03); padding: 3rem; border-right: 1px solid rgba(255,255,255,0.05); }
-.unit-info h5 { color: var(--accent); font-size: 0.8rem; font-weight: 800; margin-bottom: 0.5rem; }
-.unit-info h6 { font-size: 1.5rem; line-height: 1.2; }
-.weeks-layout { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; padding: 3rem; }
-.week-node { display: flex; gap: 1rem; align-items: flex-start; }
-.n { width: 35px; height: 35px; background: rgba(59, 130, 246, 0.15); border: 1px solid var(--accent); color: var(--accent); display: flex; items-center: center; justify-content: center; border-radius: 50%; font-weight: 800; font-size: 0.8rem; flex-shrink: 0; padding-top: 7px; }
-.week-node.active .n { background: var(--accent); color: white; }
+/* ── CARRERA ── */
+.section-carrera { padding: 120px 0; }
+.carrera-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+.section-tag { color: var(--accent); font-size: 0.8rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem; }
+.title-md { font-size: 2rem; font-weight: 800; margin-bottom: 1.5rem; line-height: 1.2; }
+.carrera-text p { color: var(--text-low); line-height: 1.8; }
+.skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.skill-item {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    padding: 1.5rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-align: center;
+    transition: border-color 0.3s, color 0.3s;
+}
+.skill-item:hover { border-color: var(--accent); color: var(--accent); }
 
-/* CURSO BLUEPRINT */
-.course-blueprint { background: linear-gradient(135deg, #0f172a, #050b1a); padding: 4rem; border-radius: 40px; border: 1px solid rgba(59, 130, 246, 0.2); }
-.blueprint-top { border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 2rem; margin-bottom: 2rem; }
+/* ── CURSO BLUEPRINT ── */
+.section-curso { padding: 80px 0; background: var(--bg-deep); border-top: 1px solid var(--border); }
+.course-blueprint {
+    background: linear-gradient(135deg, #0f172a, #050b1a);
+    padding: 4rem;
+    border-radius: 40px;
+    border: 1px solid rgba(59,130,246,0.2);
+}
+.blueprint-top {
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+}
 .code-box { color: var(--accent); font-family: 'JetBrains Mono'; font-weight: 800; font-size: 0.8rem; margin-bottom: 1rem; }
-.spec { background: rgba(2, 6, 23, 0.6); padding: 1.5rem; border-radius: 15px; text-align: center; flex: 1; }
-.b-specs { display: flex; gap: 1rem; margin-top: 2rem; }
+.blueprint-top h4 { font-size: 1.8rem; font-weight: 800; margin-bottom: 0.5rem; }
+.docente-info { color: var(--text-low); font-size: 0.9rem; }
+.b-section h5 { color: var(--accent); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.75rem; }
+.b-section p { color: var(--text-low); line-height: 1.7; }
+.b-specs { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem; }
+.spec {
+    background: rgba(2,6,23,0.6);
+    padding: 1.2rem 1.5rem;
+    border-radius: 15px;
+    text-align: center;
+    flex: 1;
+    min-width: 80px;
+    border: 1px solid var(--border);
+}
+.spec span { display: block; font-size: 0.65rem; text-transform: uppercase; color: var(--text-low); margin-bottom: 0.3rem; }
+.spec strong { font-size: 1rem; color: var(--text-high); font-weight: 800; }
 
-/* FOOTER */
-.footer { padding: 6rem 0; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); }
-.footer-logo { height: 60px; opacity: 0.5; margin-bottom: 2rem; }
+/* ── ITINERARIO ── */
+.section-itinerario { padding: 120px 0; }
+.title-md.centered { text-align: center; margin-bottom: 0.5rem; }
+.subtitle-meta { text-align: center; color: var(--text-low); font-size: 0.85rem; margin-bottom: 4rem; }
 
+/* ACORDEÓN */
+.accordion { display: flex; flex-direction: column; gap: 1.25rem; }
+
+.acc-unit {
+    background: var(--bg-surface);
+    border-radius: 24px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+    transition: border-color 0.3s;
+}
+.acc-unit.open { border-color: rgba(59,130,246,0.3); }
+.acc-unit:nth-child(3).open { border-color: rgba(129,140,248,0.3); }
+
+.acc-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.75rem 2.5rem;
+    background: none;
+    border: none;
+    color: var(--text-high);
+    cursor: pointer;
+    text-align: left;
+    gap: 1rem;
+    transition: background 0.2s;
+}
+.acc-header:hover { background: rgba(255,255,255,0.02); }
+.acc-unit.open .acc-header { background: rgba(59,130,246,0.04); }
+
+.acc-left { display: flex; align-items: center; gap: 1.25rem; }
+.acc-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    font-weight: 800;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    white-space: nowrap;
+    background: rgba(59,130,246,0.1);
+    padding: 4px 10px;
+    border-radius: 6px;
+}
+.acc-num.u3 { color: var(--accent-alt); background: rgba(129,140,248,0.1); }
+
+.acc-title { font-size: 1.1rem; font-weight: 700; }
+
+.acc-meta { display: flex; align-items: center; gap: 1.25rem; }
+.acc-weeks {
+    font-size: 0.75rem;
+    color: var(--text-low);
+    font-family: 'JetBrains Mono', monospace;
+    white-space: nowrap;
+}
+.acc-progress {
+    font-size: 0.72rem;
+    font-weight: 800;
+    color: var(--accent);
+    background: rgba(59,130,246,0.1);
+    border: 1px solid rgba(59,130,246,0.25);
+    padding: 3px 10px;
+    border-radius: 50px;
+}
+.u3-p { color: var(--accent-alt); background: rgba(129,140,248,0.1); border-color: rgba(129,140,248,0.25); }
+
+.acc-arrow {
+    font-size: 1.2rem;
+    color: var(--text-low);
+    transition: transform 0.3s;
+    display: inline-block;
+}
+.acc-unit.open .acc-arrow { transform: rotate(180deg); }
+
+/* CUERPO DEL ACORDEÓN */
+.acc-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.acc-unit.open .acc-body { max-height: 1000px; }
+
+.acc-capacity {
+    margin: 0 2.5rem 2rem;
+    padding: 1.25rem 1.5rem;
+    background: rgba(59,130,246,0.06);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 12px 12px 0;
+    font-size: 0.9rem;
+    color: var(--text-low);
+    line-height: 1.7;
+}
+.acc-unit:nth-child(3) .acc-capacity { border-left-color: var(--accent-alt); background: rgba(129,140,248,0.06); }
+
+/* GRILLA DE SEMANAS */
+.weeks-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+    padding: 0 2.5rem 2rem;
+}
+
+.week-card {
+    background: rgba(2,6,23,0.5);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 1.5rem;
+    transition: border-color 0.3s, transform 0.2s;
+    position: relative;
+}
+.week-card:hover { border-color: rgba(59,130,246,0.3); transform: translateY(-2px); }
+.week-card.active { border-color: rgba(59,130,246,0.5); background: rgba(59,130,246,0.05); }
+
+.wc-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.85rem;
+}
+.wc-num {
+    width: 36px; height: 36px;
+    background: rgba(59,130,246,0.12);
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-weight: 800;
+    font-size: 0.8rem;
+    flex-shrink: 0;
+    font-family: 'JetBrains Mono', monospace;
+}
+.wc-num.active, .week-card.active .wc-num { background: var(--accent); color: white; }
+.wc-num.u3 { border-color: var(--accent-alt); color: var(--accent-alt); background: rgba(129,140,248,0.12); }
+
+.wc-av {
+    font-size: 0.68rem;
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--text-low);
+    background: rgba(255,255,255,0.04);
+    padding: 3px 8px;
+    border-radius: 6px;
+}
+
+.week-card h6 {
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: var(--text-high);
+    line-height: 1.3;
+}
+.week-card ul { list-style: none; }
+.week-card ul li {
+    font-size: 0.8rem;
+    color: var(--text-low);
+    padding: 3px 0 3px 14px;
+    position: relative;
+    line-height: 1.5;
+}
+.week-card ul li::before {
+    content: '›';
+    position: absolute; left: 0;
+    color: var(--accent);
+    font-weight: 800;
+}
+.acc-unit:nth-child(3) .week-card ul li::before { color: var(--accent-alt); }
+
+.badge-current {
+    display: inline-block;
+    margin-top: 0.75rem;
+    font-size: 0.65rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    background: rgba(59,130,246,0.2);
+    color: var(--accent);
+    border: 1px solid rgba(59,130,246,0.4);
+    padding: 3px 10px;
+    border-radius: 50px;
+}
+
+/* PIE DEL ACORDEÓN */
+.acc-footer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    padding: 1.5rem 2.5rem 2rem;
+    border-top: 1px solid var(--border);
+    margin-top: 0.5rem;
+}
+.footer-tag {
+    font-size: 0.75rem;
+    color: var(--text-low);
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--border);
+    padding: 6px 14px;
+    border-radius: 50px;
+}
+
+/* ── EXTRA INFO ── */
+.extra-info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 4rem;
+}
+.extra-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 2rem;
+}
+.extra-card h5 {
+    color: var(--accent);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1rem;
+}
+.extra-card ul { list-style: none; }
+.extra-card ul li {
+    font-size: 0.85rem;
+    color: var(--text-low);
+    padding: 4px 0 4px 14px;
+    position: relative;
+}
+.extra-card ul li::before { content: '—'; position: absolute; left: 0; color: var(--accent); }
+.extra-card p { font-size: 0.85rem; color: var(--text-low); line-height: 1.7; }
+
+/* ── FOOTER ── */
+.footer { padding: 6rem 0; text-align: center; border-top: 1px solid var(--border); }
+.footer-logo { height: 60px; opacity: 0.5; margin-bottom: 2rem; display: block; margin-left: auto; margin-right: auto; }
+.footer p { color: var(--text-low); margin-bottom: 0.5rem; }
+.footer-sub { font-size: 0.8rem; }
+
+/* ── RESPONSIVE ── */
 @media (max-width: 900px) {
-    .hero-grid, .upla-matrix, .timeline-unit, .weeks-layout { grid-template-columns: 1fr; }
+    .hero-grid,
+    .upla-matrix,
+    .carrera-layout,
+    .extra-info-grid { grid-template-columns: 1fr; }
+
+    .weeks-grid { grid-template-columns: 1fr; }
+
     .nav-menu { display: none; }
+
+    .acc-header { padding: 1.25rem 1.5rem; flex-wrap: wrap; gap: 0.75rem; }
+    .acc-body .acc-capacity,
+    .acc-footer { margin-left: 1.5rem; margin-right: 1.5rem; }
+    .weeks-grid { padding: 0 1.5rem 1.5rem; }
+
+    .b-specs { flex-wrap: wrap; }
+    .spec { min-width: 70px; }
 }
