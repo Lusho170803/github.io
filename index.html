@@ -21,7 +21,34 @@
                     <li><a href="#universidad">Universidad</a></li>
                     <li><a href="#carrera">Ingeniería</a></li>
                     <li><a href="#curso">Syllabus</a></li>
-                    <li><a href="#itinerario">Itinerario</a></li>
+                    <li class="has-dropdown">
+                        <a href="#itinerario" class="nav-dropdown-trigger">
+                            Itinerario <span class="nav-caret">▾</span>
+                        </a>
+                        <div class="nav-dropdown">
+                            <button class="dd-item" onclick="goToUnit('unit1')">
+                                <span class="dd-badge">I</span>
+                                <span class="dd-text">
+                                    <span class="dd-name">Administración en la Nube</span>
+                                    <span class="dd-weeks">Sem. 01 – 04 &nbsp;·&nbsp; 25%</span>
+                                </span>
+                            </button>
+                            <button class="dd-item" onclick="goToUnit('unit2')">
+                                <span class="dd-badge">II</span>
+                                <span class="dd-text">
+                                    <span class="dd-name">Aplicaciones Empresariales</span>
+                                    <span class="dd-weeks">Sem. 05 – 08 &nbsp;·&nbsp; 50%</span>
+                                </span>
+                            </button>
+                            <button class="dd-item dd-u3" onclick="goToUnit('unit3')">
+                                <span class="dd-badge dd-badge-u3">III</span>
+                                <span class="dd-text">
+                                    <span class="dd-name">Infraestructura de TI</span>
+                                    <span class="dd-weeks">Sem. 09 – 12 &nbsp;·&nbsp; 75%</span>
+                                </span>
+                            </button>
+                        </div>
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -387,15 +414,27 @@
     </footer>
 
     <script>
+        // ── Abre/cierra acordeón ──
         function toggleUnit(id) {
             const unit = document.getElementById(id);
             const isOpen = unit.classList.contains('open');
-            // Cierra todos
             document.querySelectorAll('.acc-unit').forEach(u => u.classList.remove('open'));
-            // Abre el clickeado si estaba cerrado
             if (!isOpen) unit.classList.add('open');
         }
-        // Abre la primera unidad por defecto
+
+        // ── Desde el dropdown del nav: abre unidad + scroll suave ──
+        function goToUnit(id) {
+            document.querySelectorAll('.acc-unit').forEach(u => u.classList.remove('open'));
+            document.getElementById(id).classList.add('open');
+
+            setTimeout(() => {
+                const el = document.getElementById(id);
+                const top = el.getBoundingClientRect().top + window.scrollY - 100;
+                window.scrollTo({ top, behavior: 'smooth' });
+            }, 50);
+        }
+
+        // ── Init ──
         document.getElementById('unit1').classList.add('open');
     </script>
 
